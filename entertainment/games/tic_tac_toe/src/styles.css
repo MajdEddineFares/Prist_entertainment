@@ -1,0 +1,90 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.all-boards {
+  max-width: 540px;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gameboard {
+  flex: 0 0 180px; /* don't grow, don't shrink, width */
+  height: 180px;
+  outline: 5px solid black;
+}
+/*
+.gameboard:hover {
+  z-index: 100;
+  outline-color: rgb(40, 156, 104);
+}
+*/
+.gameboard.last {
+  outline-color: rgb(43, 28, 175);
+  z-index: 100;
+  animation: glow 2s infinite;
+}
+.gameboard-winner {
+  max-width: 180px;
+  height: 100%;
+  font-size: 4em;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.all-boxes {
+  max-width: 180px;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gamebox {
+  flex: 0 0 60px; /* don't grow, don't shrink, width */
+  height: 60px;
+  outline: 1px dashed black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gamebox.glow:hover {
+  background-color: rgb(28, 121, 175);
+}
+.gamebox.last {
+  background-color: rgb(28, 175, 28);
+}
+.gamebox.p1:hover:empty::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00d";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+}
+.gamebox.p2:hover:empty::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.glow {
+  animation: glow 2000ms ease-out infinite;
+}
+@keyframes glow {
+  0% {
+  }
+  88% {
+    box-shadow: inset 0 0 30px rgba(108, 255, 78, 0.568);
+  }
+  89% {
+    box-shadow: inset 0 0 30px rgba(32, 223, 42, 0);
+  }
+  100% {
+    box-shadow: inset 0 0 30px rgba(30, 184, 25, 0);
+  }
+}
