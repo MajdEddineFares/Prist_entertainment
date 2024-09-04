@@ -1,0 +1,28 @@
+.image-grid {
+    display: grid;
+    gap: 10px;
+    /* For larger screens */
+    grid-template-columns: repeat(8, 1fr);
+}
+
+/* For medium screens */
+@media only screen and (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* For small screens */
+@media only screen and (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Style for images */
+.image-grid img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+
+}
